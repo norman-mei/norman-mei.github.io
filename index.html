@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My New York</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">My New York</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item"> <b>
+                <a class="nav-link" href="page2.html">Part 1</a> </b>
+              </li>
+              <li class="nav-item"> <b>
+                <a class="nav-link" href="page3.html">Part 2</a> </b>
+              </li>
+              <li class="nav-item"> <b>
+                <a class="nav-link" href="page4.html">Part 3</a> </b>
+              </li>
+              <li class="nav-item ms-auto"> <span id="current-date"></span> </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="content-container">
+        <div class="centered-content">
+            <p id="current-date"></p> <h1 class="fw-bold">This is my New York.</h1>
+            <h2>That is...</h2>
+            <h3>The West End Line.</h3>
+            <img src="westend.jpg" alt="West End Line 1">
+            <img src="westend2.png" alt="West End Line 2">
+        </div>
+    </div>
+    <script>
+
+const currentDate = document.getElementById("current-date");
+
+function updateDate() {
+  const estTime = new Date(new Date().getTime() + 0.00000000000000000000000000000000000001 * 60 * 60 * 1000);
+  currentDate.textContent = estTime.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }) + " " + estTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true });
+}
+
+updateDate();
+setInterval(updateDate, 1000);
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
